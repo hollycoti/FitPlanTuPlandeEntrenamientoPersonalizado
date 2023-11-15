@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class CaloriasQuemadas {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        
 
         // Mostrar la lista de ejercicios
         System.out.println("Indique el ejercicio que realizó:");
@@ -40,13 +40,13 @@ public class CaloriasQuemadas {
         scanner.close();
     }
 
-    // Método para calcular las calorías quemadas según la elección del usuario y la duración del ejercicio
+    // calculo de las calorías quemadas según la elección del usuario y la duración del ejercicio
     public static double calcularCaloriasQuemadas(int opcion, int minutos) {
         double caloriasBase = obtenerCaloriasQuemadas(opcion);
         return (caloriasBase * minutos) / 60.0; // Calcular las calorías en función de los minutos
     }
 
-    // Método para obtener las calorías quemadas según la elección del usuario
+    //  las calorías quemadas según la elección del usuario
     public static int obtenerCaloriasQuemadas(int opcion) {
         switch (opcion) {
             case 1: return 502;
@@ -67,3 +67,4 @@ public class CaloriasQuemadas {
         }
     }
 }
+

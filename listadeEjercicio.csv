@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class CaloriasQuemadas {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+     
 
         // Mostrar la lista de ejercicios
         System.out.println("Indique el ejercicio que realizó:");

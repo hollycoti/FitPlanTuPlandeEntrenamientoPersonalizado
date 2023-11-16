@@ -3,9 +3,23 @@ import java.util.Scanner;
 public class CaloriasQuemadas {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        mostrarListaEjercicios();
 
-        // Mostrar la lista de ejercicios
+        // Obtener la elección del usuario
+        int opcion = obtenerOpcionUsuario("Ingrese el número correspondiente al ejercicio: ");
+
+        // Obtener la duración del ejercicio en minutos
+        int minutos = obtenerOpcionUsuario("Ingrese la cantidad de minutos que realizó el ejercicio: ");
+
+        // Calcular las calorías quemadas según la elección del usuario y la duración del ejercicio
+        double caloriasQuemadas = calcularCaloriasQuemadas(opcion, minutos);
+
+        // Mostrar el resultado
+        System.out.println("Calorías quemadas en " + minutos + " minutos: " + caloriasQuemadas);
+    }
+
+    // Método para mostrar la lista de ejercicios
+    public static void mostrarListaEjercicios() {
         System.out.println("Indique el ejercicio que realizó:");
         System.out.println("1. Ciclismo");
         System.out.println("2. Calistenia");
@@ -21,23 +35,15 @@ public class CaloriasQuemadas {
         System.out.println("12. Jugar Baloncesto");
         System.out.println("13. Artes Marciales");
         System.out.println("14. Boxeo");
+    }
 
-        // Obtener la elección del usuario
-        System.out.print("Ingrese el número correspondiente al ejercicio: ");
+    // Método para obtener la elección del usuario
+    public static int obtenerOpcionUsuario(String mensaje) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(mensaje);
         int opcion = scanner.nextInt();
-
-        // Obtener la duración del ejercicio en minutos
-        System.out.print("Ingrese la cantidad de minutos que realizó el ejercicio: ");
-        int minutos = scanner.nextInt();
-
-        // Calcular las calorías quemadas según la elección del usuario y la duración del ejercicio
-        double caloriasQuemadas = calcularCaloriasQuemadas(opcion, minutos);
-
-        // Mostrar el resultado
-        System.out.println("Calorías quemadas en " + minutos + " minutos: " + caloriasQuemadas);
-
-        // Cerrar el scanner
         scanner.close();
+        return opcion;
     }
 
     // Método para calcular las calorías quemadas según la elección del usuario y la duración del ejercicio
